@@ -64,3 +64,6 @@ CREATE TABLE AlumnoAsignatura (
     FOREIGN KEY (NumeroCuenta) REFERENCES Alumno(NumeroCuenta),
     FOREIGN KEY (CodigoAsignatura) REFERENCES Asignatura(CodigoAsignatura)
 );
+
+
+hola nose porque no se mando mi ultimo commit
