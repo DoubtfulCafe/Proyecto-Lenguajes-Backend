@@ -6,36 +6,36 @@ import org.springframework.web.bind.annotation.*;
 import com.example.proyectolenguajes.Modelos.Edificio;
 import com.example.proyectolenguajes.Servicios.EdificioService;
 import com.example.proyectolenguajes.Servicios.Impl.AlumnoServiceImpl;
-import com.example.proyectolenguajes.Servicios.Impl.EdificionServiceImpl;
+import com.example.proyectolenguajes.Servicios.Impl.EdificioServiceImpl;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/edificios")
+@RequestMapping("api/edificios")
 public class EdificioController {
 
     @Autowired
-    private EdificionServiceImpl EdificioServiceImpl;
+    private EdificioServiceImpl edificioServiceImpl;
      
   
     @PostMapping("/guardar")
     public Edificio crearEdificio(@RequestBody Edificio edificio) {
-        return EdificioServiceImpl.guardarEdificio(edificio);
+        return edificioServiceImpl.guardarEdificio(edificio);
     }
 
     @PutMapping("Actualizar")
     public Edificio actualizarEdificio(@RequestBody Edificio edificio) {
-        return EdificioServiceImpl.actualizarEdificio(edificio);
+        return edificioServiceImpl.actualizarEdificio(edificio);
     }
 
     @DeleteMapping("/{codigoEdificio}")
     public void eliminarEdificio(@PathVariable int codigoEdificio) {
-        EdificioServiceImpl.eliminarEdificio(codigoEdificio);
+        edificioServiceImpl.eliminarEdificio(codigoEdificio);
     }
 
     @GetMapping("/obtenertodos")
     public List<Edificio> obtenerTodosEdificios() {
-        return EdificioServiceImpl.obtenerTodosEdificios();
+        return edificioServiceImpl.obtenerTodosEdificios();
     }
 
     

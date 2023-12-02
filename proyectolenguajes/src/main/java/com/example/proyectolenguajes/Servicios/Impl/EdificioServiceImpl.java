@@ -11,11 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EdificionServiceImpl implements EdificioService {
+public class EdificioServiceImpl implements EdificioService {
 
+    @Autowired
     private  EdificioRepository edificioRepository;
-
-   
 
     @Override
     public Edificio guardarEdificio(Edificio edificio) {
