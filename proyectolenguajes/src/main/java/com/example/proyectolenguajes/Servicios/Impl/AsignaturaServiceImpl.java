@@ -33,7 +33,7 @@ public class AsignaturaServiceImpl implements AsignaturaService{
     }
 
     @Override
-    public List<Asignatura> obtenerTodos() {
+    public List<Asignatura> obtenerTodasAsignaturas() {
         return this.asignaturaRepository.findAll();
     }
 

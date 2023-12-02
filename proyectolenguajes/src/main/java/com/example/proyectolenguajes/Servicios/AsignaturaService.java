@@ -10,7 +10,7 @@ public interface AsignaturaService {
 
     public String eliminarAsignatura(int codigoAsignatura);
 
-    public List<Asignatura> obtenerTodos();
+    public List<Asignatura> obtenerTodasAsignaturas();
 
     public String actualizarAsignatura (int codigoAsignatura, Asignatura asignatura);
 
