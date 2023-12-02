@@ -3,6 +3,7 @@ package com.example.proyectolenguajes.Modelos;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -24,18 +25,20 @@ import lombok.Setter;
 public class Asignatura {
 
     @Id
+    @Column(name = "codigoasignatura")
     private int codigoAsignatura;
+    @Column(name = "nombreasignatura")
     private String nombreAsignatura;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_aula")
+    @JoinColumn(name = "idtipoaula")
     private TipoAula tipoAula;
 
     @OneToOne
-    @JoinColumn(name = "asignatura_requisito")
+    @JoinColumn(name = "asignaturarequisito")
     private Asignatura asignaturaRequisito;
 
     @ManyToOne
-    @JoinColumn(name = "codigo_seccion")
+    @JoinColumn(name = "codigoseccion")
     private Seccion seccion;
 }

@@ -1,6 +1,7 @@
 package com.example.proyectolenguajes.Modelos;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -21,14 +22,15 @@ import lombok.Setter;
 public class Aula {
 
     @Id
+    @Column(name = "codigoaula")
     private int codigoAula;
 
     @ManyToOne
-    @JoinColumn(name = "codigo_edificio")
+    @JoinColumn(name = "codigoedificio")
     private Edificio edificio;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_aula")
+    @JoinColumn(name = "idtipoaula")
     private TipoAula tipoAula;
 
     private int capacidad;

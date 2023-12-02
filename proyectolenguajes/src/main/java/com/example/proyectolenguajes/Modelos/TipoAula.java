@@ -1,6 +1,7 @@
 package com.example.proyectolenguajes.Modelos;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -20,6 +21,7 @@ import lombok.Setter;
 public class TipoAula {
 
     @Id
+    @Column(name = "idtipoaula")
     private int idTipoAula;
     private String descripcion;
 }

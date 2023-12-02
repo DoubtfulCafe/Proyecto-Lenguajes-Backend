@@ -3,6 +3,7 @@ package com.example.proyectolenguajes.Modelos;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -23,6 +24,7 @@ import lombok.NoArgsConstructor;
 public class Alumno {
 
     @Id
+    @Column(name = "numerocuenta")
     private int numeroCuenta;
     private String nombre;
     private String apellido;

@@ -70,3 +70,7 @@ CREATE TABLE AlumnoAsignatura (
 
 
 hola nose porque no se mando mi ultimo commit
+
+
+
+

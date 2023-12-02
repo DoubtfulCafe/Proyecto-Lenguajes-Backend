@@ -26,11 +26,11 @@ public class AlumnoAsignatura {
 
     @ManyToOne
     @MapsId("numeroCuenta")
-    @JoinColumn(name = "numero_cuenta")
+    @JoinColumn(name = "numerocuenta")
     private Alumno alumno;
 
     @ManyToOne
     @MapsId("codigoAsignatura")
-    @JoinColumn(name = "codigo_asignatura")
+    @JoinColumn(name = "codigoasignatura")
     private Asignatura asignatura;
 }
