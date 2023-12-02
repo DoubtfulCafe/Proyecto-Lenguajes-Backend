@@ -5,9 +5,13 @@ import java.util.List;
 import com.example.proyectolenguajes.Modelos.Edificio;
 
 public interface EdificioService {
-    Edificio guardarEdificio(Edificio edificio);
-    Edificio actualizarEdificio(Edificio edificio);
-    void eliminarEdificio(int codigoEdificio);
-    List<Edificio> obtenerTodosEdificios();
+
+    public Edificio guardarEdificio(Edificio edificio);
+
+    public String actualizarEdificio(int codigoEdifico, Edificio edificio);
+
+    public String eliminarEdificio(int codigoEdificio);
+
+    public List<Edificio> obtenerTodosEdificios();
     
 }

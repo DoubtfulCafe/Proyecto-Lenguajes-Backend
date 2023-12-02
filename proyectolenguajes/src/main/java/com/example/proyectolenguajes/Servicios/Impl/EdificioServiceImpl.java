@@ -22,19 +22,33 @@ public class EdificioServiceImpl implements EdificioService {
     }
 
     @Override
-    public Edificio actualizarEdificio(Edificio edificio) {
-        return edificioRepository.save(edificio);
+    public String actualizarEdificio(int codigoEdifico, Edificio edificio) {
+        Edificio edificioActualizar = this.edificioRepository.findById(codigoEdifico).get();
+
+        if (edificioActualizar != null) {
+            edificioActualizar.setNombre(edificio.getNombre());
+            edificioActualizar.setCantidadAulas(edificio.getCantidadAulas());
+            this.edificioRepository.save(edificioActualizar);
+            return "Edificio actualizado";
+        }
+
+        return "Edificio a actualizar no encontrafo";
     }
 
     @Override
-    public void eliminarEdificio(int codigoEdificio) {
-        edificioRepository.deleteById(codigoEdificio);
+    public String eliminarEdificio(int codigoEdificio) {
+        Edificio edificioEliminar = this.edificioRepository.findById(codigoEdificio).get();
+        if (edificioEliminar != null) {
+            this.edificioRepository.delete(edificioEliminar);
+            return "Edificio eliminado";
+        }
+
+        return "Edificio a eliminar no encontrado";
     }
 
     @Override
     public List<Edificio> obtenerTodosEdificios() {
-        return edificioRepository.findAll();
+        return this.edificioRepository.findAll();
     }
-
   
 }
