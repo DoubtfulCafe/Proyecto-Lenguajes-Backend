@@ -17,26 +17,25 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="Seccion")
+@Table(name = "Seccion")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Seccion {
+
     @Id
-    @Column(name="codigocliente")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoCliente;
+    private int codigoSeccion;
 
-    @Column(name="nombre")
-    String nombre;
+    @ManyToOne
+    @JoinColumn(name = "codigo_asignatura")
+    private Asignatura asignatura;
 
-    @Column(name="apellido")
-    String apellido;
+    @ManyToOne
+    @JoinColumn(name = "codigo_aula")
+    private Aula aula;
 
-   
-
-   
-
-
+    private int cupos;
+    private int anio;
+    private String periodo;
 }

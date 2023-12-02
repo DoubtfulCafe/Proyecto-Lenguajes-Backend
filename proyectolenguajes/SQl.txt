@@ -1,0 +1,66 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS Proyecto;
+USE Proyecto;
+
+-- Tabla Alumno
+CREATE TABLE Alumno (
+    NumeroCuenta INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Apellido VARCHAR(255)
+);
+
+-- Tabla Asignatura
+CREATE TABLE Asignatura (
+    CodigoAsignatura INT PRIMARY KEY,
+    NombreAsignatura VARCHAR(255),
+    idTipoAula INT UNIQUE,  -- Cambio: UNIQUE para indicar relación uno a uno
+    AsignaturaRequisito INT,
+    codigoSeccion INT,
+    FOREIGN KEY (AsignaturaRequisito) REFERENCES Asignatura(CodigoAsignatura),
+    FOREIGN KEY (codigoSeccion) REFERENCES Seccion(codigoSeccion),
+    FOREIGN KEY (idTipoAula) REFERENCES TipoAula(IdTipoAula)
+);
+
+-- Tabla Seccion
+CREATE TABLE Seccion (
+    codigoSeccion INT PRIMARY KEY,
+    CodigoAsignatura INT,
+    CodigoAula INT,
+    Cupos INT,
+    Anio INT,
+    Periodo VARCHAR(255),
+    FOREIGN KEY (CodigoAsignatura) REFERENCES Asignatura(CodigoAsignatura),
+    FOREIGN KEY (CodigoAula) REFERENCES Aula(CodigoAula)
+);
+
+-- Tabla Aula
+CREATE TABLE Aula (
+    CodigoAula INT PRIMARY KEY,
+    codigoEdificio INT,
+    idTipoAula INT,
+    Capacidad INT,
+    FOREIGN KEY (codigoEdificio) REFERENCES Edificio(codigoEdificio),
+    FOREIGN KEY (idTipoAula) REFERENCES TipoAula(IdTipoAula)
+);
+
+-- Tabla TipoAula
+CREATE TABLE TipoAula (
+    IdTipoAula INT PRIMARY KEY,
+    Descripcion VARCHAR(255)
+);
+
+-- Tabla Edificio
+CREATE TABLE Edificio (
+    codigoEdificio INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    CantidadAulas INT
+);
+
+-- Tabla intermedia AlumnoAsignatura para relación muchos a muchos
+CREATE TABLE AlumnoAsignatura (
+    NumeroCuenta INT,
+    CodigoAsignatura INT,
+    PRIMARY KEY (NumeroCuenta, CodigoAsignatura),
+    FOREIGN KEY (NumeroCuenta) REFERENCES Alumno(NumeroCuenta),
+    FOREIGN KEY (CodigoAsignatura) REFERENCES Asignatura(CodigoAsignatura)
+);

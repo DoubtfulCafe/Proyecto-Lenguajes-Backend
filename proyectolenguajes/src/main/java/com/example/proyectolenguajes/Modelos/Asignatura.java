@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,26 +18,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="Asignatura")
+@Table(name = "Asignatura")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Asignatura {
+
     @Id
-    @Column(name="codigocliente")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoCliente;
+    private int codigoAsignatura;
+    private String nombreAsignatura;
 
-    @Column(name="nombre")
-    String nombre;
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_aula")
+    private TipoAula tipoAula;
 
-    @Column(name="apellido")
-    String apellido;
+    @OneToOne
+    @JoinColumn(name = "asignatura_requisito")
+    private Asignatura asignaturaRequisito;
 
-   
-
-   
-
-
+    @ManyToOne
+    @JoinColumn(name = "codigo_seccion")
+    private Seccion seccion;
 }

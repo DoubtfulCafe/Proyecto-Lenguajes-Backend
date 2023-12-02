@@ -18,31 +18,16 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name="alumno")
-
+@Table(name = "Alumno")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Alumno {
+
     @Id
-    @Column(name="codigocliente")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoCliente;
-
-    @Column(name="nombre")
-    String nombre;
-
-    @Column(name="apellido")
-    String apellido;
-
-    @Column(name="fechaingreso")
-    Date fechaIngreso;
-
-   
-
-
+    private int numeroCuenta;
+    private String nombre;
+    private String apellido;
 }
-
-
     

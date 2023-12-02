@@ -17,26 +17,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="Aula")
+@Table(name = "Aula")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Aula {
+
     @Id
-    @Column(name="codigocliente")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoCliente;
+    private int codigoAula;
 
-    @Column(name="nombre")
-    String nombre;
+    @ManyToOne
+    @JoinColumn(name = "codigo_edificio")
+    private Edificio edificio;
 
-    @Column(name="apellido")
-    String apellido;
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_aula")
+    private TipoAula tipoAula;
 
-   
-
-   
-
-
+    private int capacidad;
 }

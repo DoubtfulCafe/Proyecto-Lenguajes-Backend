@@ -17,26 +17,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="TipoAula")
+@Table(name = "TipoAula")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class TipoAula {
+
     @Id
-    @Column(name="codigocliente")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigoCliente;
-
-    @Column(name="nombre")
-    String nombre;
-
-    @Column(name="apellido")
-    String apellido;
-
-   
-
-   
-
-
+    private int idTipoAula;
+    private String descripcion;
 }
