@@ -1,16 +1,23 @@
 package com.example.proyectolenguajes.Servicios.Impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.proyectolenguajes.Modelos.Alumno;
+import com.example.proyectolenguajes.Modelos.AlumnoAsignatura;
+import com.example.proyectolenguajes.Modelos.Asignatura;
+import com.example.proyectolenguajes.Repositorios.AlumnoAsignaturaRepository;
 import com.example.proyectolenguajes.Repositorios.AlumnoRepository;
 import com.example.proyectolenguajes.Servicios.AlumnoService;
 
 @Service
 public class AlumnoServiceImpl implements AlumnoService{
+
+    @Autowired
+    private  AlumnoAsignaturaRepository alumnoAsignaturaRepository;
 
     @Autowired
     private AlumnoRepository alumnoRepository;
@@ -50,5 +57,17 @@ public class AlumnoServiceImpl implements AlumnoService{
 
         return "Alumno a actualizar no encontrado";
     }
+
     
+    public AlumnoServiceImpl(AlumnoAsignaturaRepository alumnoAsignaturaRepository) {
+        this.alumnoAsignaturaRepository = alumnoAsignaturaRepository;
+    }
+
+    @Override
+    public List<AlumnoAsignatura> obtenerAsignaturasPorNumeroCuenta(int numeroCuenta) {
+        return alumnoAsignaturaRepository.findByAlumnoNumeroCuenta(numeroCuenta);
+    }
 }
+
+  
+
