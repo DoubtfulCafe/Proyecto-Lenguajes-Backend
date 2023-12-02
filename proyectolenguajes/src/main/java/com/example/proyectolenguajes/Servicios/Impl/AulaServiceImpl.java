@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.proyectolenguajes.Modelos.Aula;
+import com.example.proyectolenguajes.Modelos.Aula;
 import com.example.proyectolenguajes.Repositorios.AulaRepository;
 import com.example.proyectolenguajes.Servicios.AulaService;
 
@@ -22,33 +23,44 @@ import java.util.Optional;
 @Service
 public class AulaServiceImpl implements AulaService {
     
-
-     @Autowired
+    @Autowired
     private AulaRepository aulaRepository;
-
+    
     @Override
     public Aula guardarAula(Aula aula) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'guardarAula'");
+        return aulaRepository.save(aula);
     }
-
+    
     @Override
-    public Aula actualizarAula(Aula aula) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizarAula'");
+    public String eliminarAula(int codigoAula) {
+        Aula aulaEliminar = this.aulaRepository.findById(codigoAula).orElse(null);
+    
+        if (aulaEliminar != null) {
+            this.aulaRepository.delete(aulaEliminar);
+            return "Aula eliminada";
+        }
+    
+        return "Aula a eliminar no encontrada";
     }
-
+    
     @Override
-    public void eliminarAula(int codigoAula) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminarAula'");
+    public List<Aula> obtenerTodasAulas() {
+        return this.aulaRepository.findAll();
     }
-
+    
     @Override
-    public List<Aula> obtenerTodosAulas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerTodosAulas'");
+    public String actualizarAula(int codigoAula, Aula aula) {
+        Aula aulaActualizar = this.aulaRepository.findById(codigoAula).orElse(null);
+    
+        if (aulaActualizar != null) {
+           
+            aulaActualizar.setTipoAula(aula.getTipoAula());
+            aulaActualizar.setCapacidad(aula.getCapacidad());
+            this.aulaRepository.save(aulaActualizar);
+            return "Aula actualizada";
+        }
+    
+        return "Aula a actualizar no encontrada";
     }
-
-  
+    
 }

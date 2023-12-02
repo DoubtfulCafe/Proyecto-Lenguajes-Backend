@@ -5,9 +5,13 @@ import java.util.List;
 import com.example.proyectolenguajes.Modelos.Aula;
 
 public interface AulaService {
-    Aula guardarAula(Aula aula);
-    Aula actualizarAula(Aula aula);
-    void eliminarAula(int codigoAula);
-    List<Aula> obtenerTodosAulas();
+    public Aula guardarAula(Aula aula);
+
+    public String eliminarAula(int codigoAula);
+
+    public List<Aula> obtenerTodasAulas();
+
+    public String actualizarAula(int codigoAula, Aula aula);
+
     
 }
