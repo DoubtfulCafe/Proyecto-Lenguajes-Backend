@@ -23,17 +23,17 @@ public class EdificioController {
         return edificioServiceImpl.guardarEdificio(edificio);
     }
 
-    @PutMapping("Actualizar")
+    @PutMapping("/actualizar")
     public Edificio actualizarEdificio(@RequestBody Edificio edificio) {
         return edificioServiceImpl.actualizarEdificio(edificio);
     }
 
-    @DeleteMapping("/{codigoEdificio}")
+    @DeleteMapping("/eliminar/{codigoEdificio}")
     public void eliminarEdificio(@PathVariable int codigoEdificio) {
         edificioServiceImpl.eliminarEdificio(codigoEdificio);
     }
 
-    @GetMapping("/obtenertodos")
+    @GetMapping("/todos")
     public List<Edificio> obtenerTodosEdificios() {
         return edificioServiceImpl.obtenerTodosEdificios();
     }
