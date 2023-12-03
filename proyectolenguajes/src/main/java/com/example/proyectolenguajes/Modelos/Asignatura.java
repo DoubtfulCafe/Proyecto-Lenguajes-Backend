@@ -5,6 +5,7 @@ package com.example.proyectolenguajes.Modelos;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
@@ -47,4 +48,7 @@ public class Asignatura {
 
     @ManyToMany(mappedBy = "asignaturas")
     private List<Alumno> Alumnos;
+
+    @OneToOne(mappedBy = "asignatura", cascade = CascadeType.ALL)
+    private AlumnoAsignatura alumnoAsignatura;
 }

@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,5 +43,8 @@ public class Alumno {
         inverseJoinColumns = @JoinColumn(name="codigoasignatura",referencedColumnName = "codigoasignatura")
     )
     private List<Asignatura> asignaturas;
+
+    @OneToOne(mappedBy = "alumno", cascade = CascadeType.ALL)
+    private AlumnoAsignatura alumnoAsignatura;
 }
     
