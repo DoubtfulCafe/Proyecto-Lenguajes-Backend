@@ -50,5 +50,10 @@ public class EdificioServiceImpl implements EdificioService {
     public List<Edificio> obtenerTodosEdificios() {
         return this.edificioRepository.findAll();
     }
+
+    @Override
+    public Edificio obtenerPorId(int codigoEdificio) {
+        return this.edificioRepository.findById(codigoEdificio).get();
+    }
   
 }

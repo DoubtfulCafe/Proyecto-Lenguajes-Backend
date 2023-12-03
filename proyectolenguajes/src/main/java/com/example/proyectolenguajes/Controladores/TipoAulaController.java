@@ -25,6 +25,11 @@ public class TipoAulaController {
         return this.tipoAulaServiceImpl.obtenerTodos();
     }
 
+    @GetMapping("/obtener/{idTipoAula}")
+    public TipoAula obtenerPorId(@PathVariable(name = "idTipoAula") int idTipoAula){
+        return this.tipoAulaServiceImpl.obtenerPorId(idTipoAula);
+    }
+
     @DeleteMapping("/eliminar/{idTipoAula}")
     public String eliminarTipoAula(@PathVariable(name = "idTipoAula") int idTipoAula) {
         return this.tipoAulaServiceImpl.eliminarTipoAula(idTipoAula);

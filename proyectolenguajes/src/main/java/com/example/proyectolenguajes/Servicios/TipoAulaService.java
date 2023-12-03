@@ -9,7 +9,9 @@ public interface TipoAulaService {
 
     public String eliminarTipoAula(int idTipoAula);
 
-    public List<TipoAula> obtenerTodosTiposAula();
+    public List<TipoAula> obtenerTodos();
+
+    public TipoAula obtenerPorId(int idTipoAula);
 
     public String actualizarTipoAula(int idTipoAula, TipoAula tipoAula);
 

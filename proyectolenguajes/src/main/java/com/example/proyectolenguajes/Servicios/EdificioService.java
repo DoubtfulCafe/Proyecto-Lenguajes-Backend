@@ -12,6 +12,8 @@ public interface EdificioService {
 
     public String eliminarEdificio(int codigoEdificio);
 
+    public Edificio obtenerPorId(int codigoEdificio);
+
     public List<Edificio> obtenerTodosEdificios();
     
 }

@@ -66,4 +66,9 @@ public class AsignaturaServiceImpl implements AsignaturaService{
                 .orElseThrow(() -> new RuntimeException("Asignatura no encontrada"));
         return asignatura.getAlumnos().size();
     }
+
+    @Override
+    public Asignatura obtenerPorId(int codigoAsignatura) {
+        return this.asignaturaRepository.findById(codigoAsignatura).get();
+    }
 }

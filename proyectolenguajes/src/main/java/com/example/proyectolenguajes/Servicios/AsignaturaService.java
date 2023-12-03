@@ -11,6 +11,8 @@ public interface AsignaturaService {
 
     public String eliminarAsignatura(int codigoAsignatura);
 
+    public Asignatura obtenerPorId(int codigoAsignatura);
+
     public List<Asignatura> obtenerTodasAsignaturas();
 
     public String actualizarAsignatura (int codigoAsignatura, Asignatura asignatura);

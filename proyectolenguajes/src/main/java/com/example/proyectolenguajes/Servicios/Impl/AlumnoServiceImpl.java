@@ -83,6 +83,11 @@ public class AlumnoServiceImpl implements AlumnoService{
                 .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
         return alumno.getAsignaturas();
     }
+
+    @Override
+    public Alumno obtenerPorId(int numeroCuenta) {
+        return this.alumnoRepository.findById(numeroCuenta).get();
+    }
   
 }
 

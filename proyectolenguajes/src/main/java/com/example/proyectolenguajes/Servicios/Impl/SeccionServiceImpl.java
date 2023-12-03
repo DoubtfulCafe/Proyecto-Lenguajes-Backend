@@ -52,5 +52,10 @@ public class SeccionServiceImpl implements SeccionService {
 
         return "Sección a actualizar no encontrada";
     }
+
+    @Override
+    public Seccion obtenerPorId(int codigoSeccion) {
+        return this.seccionRepository.findById(codigoSeccion).get();
+    }
 }
 

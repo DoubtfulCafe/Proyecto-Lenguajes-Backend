@@ -12,6 +12,8 @@ public interface AlumnoService {
 
     public String eliminarAlumno(int numeroCuenta);
 
+    public Alumno obtenerPorId(int numeroCuenta);
+
     public List<Alumno> obtenerTodos();
 
     public String actualizarAlumno (int numeroCuenta, Alumno alumno);

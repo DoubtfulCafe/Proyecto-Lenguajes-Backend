@@ -20,6 +20,11 @@ public class SeccionController {
         return this.seccionServiceImpl.guardarSeccion(seccion);
     }
 
+    @GetMapping("/obtener/{codigoSeccion}")
+    public Seccion obtenerPorId(@PathVariable(name = "codigoSeccion") int codigoSeccion){
+        return this.seccionServiceImpl.obtenerPorId(codigoSeccion);
+    }
+
     @GetMapping("/todos")
     public List<Seccion> obtenerTodasSecciones() {
         return this.seccionServiceImpl.obtenerTodasSecciones();

@@ -25,6 +25,11 @@ public class AulaController {
         return aulaServiceImpl.obtenerTodasAulas();
     }
 
+    @GetMapping("/obtener/{codigoAula}")
+    public Aula obtenerPorId(@PathVariable(name = "codigoAula") int codigoAula){
+        return aulaServiceImpl.obtenerPorId(codigoAula);
+    }
+
     @DeleteMapping("/eliminar/{codigoAula}")
     public String eliminarAula(@PathVariable(name = "codigoAula") int codigoAula) {
         return aulaServiceImpl.eliminarAula(codigoAula);

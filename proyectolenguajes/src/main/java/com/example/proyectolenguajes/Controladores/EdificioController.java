@@ -33,6 +33,11 @@ public class EdificioController {
         return this.edificioServiceImpl.eliminarEdificio(codigoEdificio);
     }
 
+    @GetMapping("/obtener/{codigoEdificio}")
+    public Edificio obtenerPorId(@PathVariable(name = "codigoEdificio") int codigoEdificio){
+        return this.edificioServiceImpl.obtenerPorId(codigoEdificio);
+    }
+
     @GetMapping("/todos")
     public List<Edificio> obtenerTodosEdificios() {
         return edificioServiceImpl.obtenerTodosEdificios();

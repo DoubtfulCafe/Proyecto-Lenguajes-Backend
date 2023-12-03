@@ -62,5 +62,10 @@ public class AulaServiceImpl implements AulaService {
     
         return "Aula a actualizar no encontrada";
     }
+
+    @Override
+    public Aula obtenerPorId(int codigoAula) {
+        return this.aulaRepository.findById(codigoAula).get();
+    }
     
 }

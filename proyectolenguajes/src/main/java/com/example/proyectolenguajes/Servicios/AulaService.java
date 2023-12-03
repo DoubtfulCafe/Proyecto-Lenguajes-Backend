@@ -9,6 +9,8 @@ public interface AulaService {
 
     public String eliminarAula(int codigoAula);
 
+    public Aula obtenerPorId(int codigoAula);
+
     public List<Aula> obtenerTodasAulas();
 
     public String actualizarAula(int codigoAula, Aula aula);

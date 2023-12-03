@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.proyectolenguajes.Modelos.TipoAula;
 import com.example.proyectolenguajes.Repositorios.TipoAulaRepository;
+import com.example.proyectolenguajes.Servicios.TipoAulaService;
 
 @Service
-public class TipoAulaServiceImpl {
+public class TipoAulaServiceImpl implements TipoAulaService{
 
     @Autowired
     private TipoAulaRepository tipoAulaRepository;
@@ -43,6 +44,11 @@ public class TipoAulaServiceImpl {
         }
 
         return "Tipo de Aula a actualizar no encontrado";
+    }
+
+    @Override
+    public TipoAula obtenerPorId(int idTipoAula) {
+        return this.tipoAulaRepository.findById(idTipoAula).get();
     }
 }
 

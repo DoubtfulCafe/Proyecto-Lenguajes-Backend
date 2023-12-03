@@ -34,6 +34,11 @@ public class AlumnoController {
         return this.alumnoServiceImpl.obtenerTodos();
     }
 
+    @GetMapping("/obtener/{numeroCuenta}")
+    public Alumno obtenerPorId(@PathVariable(name = "numeroCuenta") int numeroCuenta){
+        return this.alumnoServiceImpl.obtenerPorId(numeroCuenta);
+    }
+
     @DeleteMapping("/eliminar/{numeroCuenta}")
     public String eliminarAlumno(@PathVariable(name = "numeroCuenta") int numeroCuenta){
         return this.alumnoServiceImpl.eliminarAlumno(numeroCuenta);

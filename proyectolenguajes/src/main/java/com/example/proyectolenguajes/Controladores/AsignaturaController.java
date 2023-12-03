@@ -26,6 +26,11 @@ public class AsignaturaController {
         return this.asignaturaServiceImpl.obtenerTodasAsignaturas();
     }
 
+    @GetMapping("/obtener/{codigoAsignatura}")
+    public Asignatura obtenerPorId(@PathVariable(name = "codigoAsignatura") int codigoAsignatura){
+        return this.asignaturaServiceImpl.obtenerPorId(codigoAsignatura);
+    }
+
     @DeleteMapping("/eliminar/{codigoAsignatura}")
     public String eliminarAsignatura(@PathVariable(name = "codigoAsignatura") int codigoAsignatura) {
         return this.asignaturaServiceImpl.eliminarAsignatura(codigoAsignatura);
