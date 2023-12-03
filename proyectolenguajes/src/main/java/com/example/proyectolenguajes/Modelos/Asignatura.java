@@ -3,11 +3,14 @@ package com.example.proyectolenguajes.Modelos;
 
 
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -41,4 +44,7 @@ public class Asignatura {
     @ManyToOne
     @JoinColumn(name = "codigoseccion")
     private Seccion seccion;
+
+    @ManyToMany(mappedBy = "asignaturas")
+    private List<Alumno> Alumnos;
 }
