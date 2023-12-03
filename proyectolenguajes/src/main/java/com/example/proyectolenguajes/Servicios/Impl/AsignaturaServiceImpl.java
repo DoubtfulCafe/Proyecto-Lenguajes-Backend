@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.proyectolenguajes.Modelos.Alumno;
 import com.example.proyectolenguajes.Modelos.Asignatura;
 import com.example.proyectolenguajes.Repositorios.AsignaturaRepository;
 import com.example.proyectolenguajes.Servicios.AsignaturaService;
@@ -51,4 +52,18 @@ public class AsignaturaServiceImpl implements AsignaturaService{
         return "Asignatura a actualizar no encontrada";
     }
     
+
+    @Override
+    public List<Alumno> obtenerAlumnosPorCodigoAsignatura(int codigoAsignatura) {
+        Asignatura asignatura = asignaturaRepository.findById(codigoAsignatura)
+                .orElseThrow(() -> new RuntimeException("Asignatura no encontrada"));
+        return asignatura.getAlumnos();
+    }
+
+    @Override
+    public int obtenerCantidadAlumnosPorCodigoAsignatura(int codigoAsignatura) {
+        Asignatura asignatura = asignaturaRepository.findById(codigoAsignatura)
+                .orElseThrow(() -> new RuntimeException("Asignatura no encontrada"));
+        return asignatura.getAlumnos().size();
+    }
 }

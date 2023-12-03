@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.proyectolenguajes.Modelos.Alumno;
+import com.example.proyectolenguajes.Modelos.Asignatura;
 import com.example.proyectolenguajes.Servicios.Impl.AlumnoServiceImpl;
 
 @RestController
@@ -41,5 +42,15 @@ public class AlumnoController {
     @PutMapping("/actualizar")
     public String actualizarAlumno(@RequestParam(name = "numeroCuenta") int numeroCuenta, @RequestBody Alumno alumno){
         return this.alumnoServiceImpl.actualizarAlumno(numeroCuenta, alumno);
+    }
+
+     @PostMapping("/{numeroCuenta}/matricular/{codigoAsignatura}")
+    public void matricularAlumno(@PathVariable int numeroCuenta, @PathVariable int codigoAsignatura) {
+        alumnoServiceImpl.matricularAlumno(numeroCuenta, codigoAsignatura);
+    }
+
+    @GetMapping("/{numeroCuenta}/asignaturas")
+    public List<Asignatura> obtenerAsignaturasPorNumeroCuenta(@PathVariable int numeroCuenta) {
+        return alumnoServiceImpl.obtenerAsignaturasPorNumeroCuenta(numeroCuenta);
     }
 }
