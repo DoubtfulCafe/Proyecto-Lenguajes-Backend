@@ -16,7 +16,7 @@ CREATE TABLE Alumno (
 CREATE TABLE Asignatura (
     CodigoAsignatura INT PRIMARY KEY,
     NombreAsignatura VARCHAR(255),
-    idTipoAula INT UNIQUE,  -- Cambio: UNIQUE para indicar relación uno a uno
+    idTipoAula INT,  -- Cambio: Sin UNIQUE
     AsignaturaRequisito INT,
     codigoSeccion INT,
     FOREIGN KEY (AsignaturaRequisito) REFERENCES Asignatura(CodigoAsignatura),
