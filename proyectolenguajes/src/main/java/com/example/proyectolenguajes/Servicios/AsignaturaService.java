@@ -17,8 +17,8 @@ public interface AsignaturaService {
 
     public String actualizarAsignatura (int codigoAsignatura, Asignatura asignatura);
 
-    List<Alumno> obtenerAlumnosPorCodigoAsignatura(int codigoAsignatura);
+    /*List<Alumno> obtenerAlumnosPorCodigoAsignatura(int codigoAsignatura);
 
-    int obtenerCantidadAlumnosPorCodigoAsignatura(int codigoAsignatura);
+    int obtenerCantidadAlumnosPorCodigoAsignatura(int codigoAsignatura);*/
 
 }

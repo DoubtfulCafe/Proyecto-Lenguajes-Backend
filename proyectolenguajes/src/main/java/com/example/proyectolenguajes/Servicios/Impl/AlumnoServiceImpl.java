@@ -61,7 +61,7 @@ public class AlumnoServiceImpl implements AlumnoService{
         return "Alumno a actualizar no encontrado";
     }
 
-    @Override
+    /*@Override
     @Transactional
     public void matricularAlumno(int numeroCuenta, int codigoAsignatura) {
         Alumno alumno = alumnoRepository.findById(numeroCuenta)
@@ -82,7 +82,7 @@ public class AlumnoServiceImpl implements AlumnoService{
         Alumno alumno = alumnoRepository.findById(numeroCuenta)
                 .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
         return alumno.getAsignaturas();
-    }
+    }*/
 
     @Override
     public Alumno obtenerPorId(int numeroCuenta) {

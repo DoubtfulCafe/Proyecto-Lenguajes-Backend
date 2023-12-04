@@ -49,7 +49,7 @@ public class AlumnoController {
         return this.alumnoServiceImpl.actualizarAlumno(numeroCuenta, alumno);
     }
 
-     @PostMapping("/{numeroCuenta}/matricular/{codigoAsignatura}")
+    /*@PostMapping("/{numeroCuenta}/matricular/{codigoAsignatura}")
     public void matricularAlumno(@PathVariable int numeroCuenta, @PathVariable int codigoAsignatura) {
         alumnoServiceImpl.matricularAlumno(numeroCuenta, codigoAsignatura);
     }
@@ -57,5 +57,5 @@ public class AlumnoController {
     @GetMapping("/{numeroCuenta}/asignaturas")
     public List<Asignatura> obtenerAsignaturasPorNumeroCuenta(@PathVariable int numeroCuenta) {
         return alumnoServiceImpl.obtenerAsignaturasPorNumeroCuenta(numeroCuenta);
-    }
+    }*/
 }

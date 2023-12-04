@@ -37,14 +37,12 @@ public class Alumno {
 
 
     //creando la tabla intermedia
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    /*@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
     @JoinTable(
         name="alumnoasignatura" , joinColumns = @JoinColumn(name="numerocuenta",referencedColumnName = "numerocuenta"),
         inverseJoinColumns = @JoinColumn(name="codigoasignatura",referencedColumnName = "codigoasignatura")
     )
     private List<Asignatura> asignaturas;
-
-    @OneToOne(mappedBy = "alumno", cascade = CascadeType.ALL)
-    private AlumnoAsignatura alumnoAsignatura;
+    */
 }
     

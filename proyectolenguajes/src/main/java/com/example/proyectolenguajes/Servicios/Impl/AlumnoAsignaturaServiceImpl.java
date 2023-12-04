@@ -27,23 +27,15 @@ public class AlumnoAsignaturaServiceImpl implements AlumnoAsignaturaService {
 
     @Override
     public AlumnoAsignatura matricular(int numeroCuenta, int codigoAsignatura) {
-        Alumno alumnoMatricular = alumnoServiceImpl.obtenerPorId(numeroCuenta);
-        Asignatura asignaturaMatricular = asignaturaServiceImpl.obtenerPorId(codigoAsignatura);
-        AlumnoAsignatura alumnoAsignaturaMatricular = new AlumnoAsignatura();
-
-        if (alumnoMatricular != null && asignaturaMatricular != null){
-            alumnoAsignaturaMatricular.setAlumno(alumnoMatricular);
-            alumnoAsignaturaMatricular.setAsignatura(asignaturaMatricular);
-        }
-        
-        return alumnoAsignaturaRepository.save(alumnoAsignaturaMatricular);
-
+        AlumnoAsignatura nvAlumnoAsignatura = new AlumnoAsignatura();
+        nvAlumnoAsignatura.setNumerocuenta(numeroCuenta);
+        nvAlumnoAsignatura.setCodigoasignatura(codigoAsignatura);
+        return this.alumnoAsignaturaRepository.save(nvAlumnoAsignatura);
     }
 
     @Override
     public List<AlumnoAsignatura> obtenerTodos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerTodos'");
+        return this.alumnoAsignaturaRepository.findAll();
     }
     
 }

@@ -25,12 +25,8 @@ public class AlumnoAsignatura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    @JoinColumn(name = "numerocuenta", referencedColumnName = "numeroCuenta")
-    private Alumno alumno;
+    private int numerocuenta;
 
-    @OneToOne
-    @JoinColumn(name = "codigoasignatura", referencedColumnName = "codigoAsignatura")
-    private Asignatura asignatura;
+    private int codigoasignatura;
 
 }

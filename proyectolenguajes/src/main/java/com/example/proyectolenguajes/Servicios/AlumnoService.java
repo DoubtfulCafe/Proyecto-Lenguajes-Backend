@@ -18,9 +18,9 @@ public interface AlumnoService {
 
     public String actualizarAlumno (int numeroCuenta, Alumno alumno);
 
-    void matricularAlumno(int numeroCuenta, int codigoAsignatura);
+    /*void matricularAlumno(int numeroCuenta, int codigoAsignatura);
 
-    List<Asignatura> obtenerAsignaturasPorNumeroCuenta(int numeroCuenta);
+    List<Asignatura> obtenerAsignaturasPorNumeroCuenta(int numeroCuenta);*/
 
      
 

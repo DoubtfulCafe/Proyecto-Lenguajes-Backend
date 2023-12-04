@@ -41,7 +41,7 @@ public class AsignaturaController {
         return this.asignaturaServiceImpl.actualizarAsignatura(codigoAsignatura, asignatura);
     }
 
-    @GetMapping("/{codigoAsignatura}/alumnos")
+    /*@GetMapping("/{codigoAsignatura}/alumnos")
     public List<Alumno> obtenerAlumnosPorCodigoAsignatura(@PathVariable int codigoAsignatura) {
         return asignaturaServiceImpl.obtenerAlumnosPorCodigoAsignatura(codigoAsignatura);
     }
@@ -49,6 +49,6 @@ public class AsignaturaController {
     @GetMapping("/{codigoAsignatura}/cantidad-alumnos")
     public int obtenerCantidadAlumnosPorCodigoAsignatura(@PathVariable int codigoAsignatura) {
         return asignaturaServiceImpl.obtenerCantidadAlumnosPorCodigoAsignatura(codigoAsignatura);
-    }
+    }*/
 }
 

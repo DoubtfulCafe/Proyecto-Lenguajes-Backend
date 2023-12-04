@@ -53,7 +53,7 @@ public class AsignaturaServiceImpl implements AsignaturaService{
     }
     
 
-    @Override
+    /*@Override
     public List<Alumno> obtenerAlumnosPorCodigoAsignatura(int codigoAsignatura) {
         Asignatura asignatura = asignaturaRepository.findById(codigoAsignatura)
                 .orElseThrow(() -> new RuntimeException("Asignatura no encontrada"));
@@ -65,7 +65,7 @@ public class AsignaturaServiceImpl implements AsignaturaService{
         Asignatura asignatura = asignaturaRepository.findById(codigoAsignatura)
                 .orElseThrow(() -> new RuntimeException("Asignatura no encontrada"));
         return asignatura.getAlumnos().size();
-    }
+    }*/
 
     @Override
     public Asignatura obtenerPorId(int codigoAsignatura) {

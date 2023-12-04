@@ -46,9 +46,7 @@ public class Asignatura {
     @JoinColumn(name = "codigoseccion")
     private Seccion seccion;
 
-    @ManyToMany(mappedBy = "asignaturas")
-    private List<Alumno> Alumnos;
+    /*@ManyToMany(mappedBy = "asignaturas")
+    private List<Alumno> Alumnos;*/
 
-    @OneToOne(mappedBy = "asignatura", cascade = CascadeType.ALL)
-    private AlumnoAsignatura alumnoAsignatura;
 }
