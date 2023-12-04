@@ -16,7 +16,7 @@ CREATE TABLE Alumno (
 CREATE TABLE Asignatura (
     CodigoAsignatura INT PRIMARY KEY,
     NombreAsignatura VARCHAR(255),
-    idTipoAula INT UNIQUE,  -- Cambio: UNIQUE para indicar relación uno a uno
+    idTipoAula INT,  -- Cambio: Sin UNIQUE
     AsignaturaRequisito INT,
     codigoSeccion INT,
     FOREIGN KEY (AsignaturaRequisito) REFERENCES Asignatura(CodigoAsignatura),
@@ -61,11 +61,11 @@ CREATE TABLE Edificio (
 
 -- Tabla intermedia AlumnoAsignatura para relación muchos a muchos
 CREATE TABLE AlumnoAsignatura (
-    NumeroCuenta INT,
-    CodigoAsignatura INT,
-    PRIMARY KEY (NumeroCuenta, CodigoAsignatura),
-    FOREIGN KEY (NumeroCuenta) REFERENCES Alumno(NumeroCuenta),
-    FOREIGN KEY (CodigoAsignatura) REFERENCES Asignatura(CodigoAsignatura)
+    id INT AUTO_INCREMENT PRIMARY KEY
+    numerocuenta INT,
+    codigoasignatura INT,
+    FOREIGN KEY (numerocuenta) REFERENCES Alumno(NumeroCuenta),
+    FOREIGN KEY (codigoasignatura) REFERENCES Asignatura(CodigoAsignatura)
 );
 
 
