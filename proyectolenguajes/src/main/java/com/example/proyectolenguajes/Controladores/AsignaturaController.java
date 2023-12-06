@@ -66,16 +66,19 @@ public class AsignaturaController {
         asignatura.setCodigoAsignatura(asignaturaDTO.getCodigoAsignatura());
         asignatura.setNombreAsignatura(asignaturaDTO.getNombreAsignatura());
 
-        // Puedes manejar la asignaturaRequisito y otros campos aquí según tus necesidades
+        
         if (asignaturaDTO.getIdAsignaturaRequisito() != 0) {
             Asignatura requisito = asignaturaServiceImpl.obtenerPorId(asignaturaDTO.getIdAsignaturaRequisito());
             asignatura.setAsignaturaRequisito(requisito);
         }
 
-        // Puedes manejar otros campos como tipoAula y seccion aquí
+    
 
         return asignatura;
     }
+
+
+    
     /*@GetMapping("/{codigoAsignatura}/alumnos")
     public List<Alumno> obtenerAlumnosPorCodigoAsignatura(@PathVariable int codigoAsignatura) {
         return asignaturaServiceImpl.obtenerAlumnosPorCodigoAsignatura(codigoAsignatura);
