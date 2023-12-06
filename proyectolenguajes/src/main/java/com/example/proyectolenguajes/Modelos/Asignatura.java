@@ -30,6 +30,9 @@ public class Asignatura {
     @Column(name = "nombreasignatura")
     private String nombreAsignatura;
 
+    @Column(name = "cantidadalumnos")
+    private int cantidadAlumnos;
+
     @ManyToOne
     @JoinColumn(name = "idtipoaula")
     private TipoAula tipoAula;
