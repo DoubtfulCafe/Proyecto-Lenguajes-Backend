@@ -68,8 +68,8 @@ CREATE TABLE AlumnoAsignatura (
     FOREIGN KEY (codigoasignatura) REFERENCES Asignatura(CodigoAsignatura)
 );
 
+ALTER TABLE asignatura ADD cantidadalumnos INT NULL;
 
-hola nose porque no se mando mi ultimo commit
 
 
 
