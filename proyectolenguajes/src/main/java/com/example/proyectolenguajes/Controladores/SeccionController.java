@@ -106,9 +106,14 @@ public class SeccionController {
         }
     }
 
-    /*public static Aula seleccionarAula(Asignatura asignatura){
+    /*public static Aula seleccionarAula(Asignatura asignatura, List<Aula> listaAulas){
         TipoAula tipoAula = asignatura.getTipoAula();
-        for (Aula aula : )
+        for (Aula aula : listaAulas){
+            int tipoAVerificar = aula.getTipoAula().getIdTipoAula();
+            if (tipoAula.getIdTipoAula() == tipoAVerificar) {
+                return aula;
+            }
+        }
     }*/
 
 }
