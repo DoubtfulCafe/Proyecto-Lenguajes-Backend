@@ -39,5 +39,6 @@ public class SeccionController {
     public String actualizarSeccion(@RequestParam(name = "codigoSeccion") int codigoSeccion, @RequestBody Seccion seccion) {
         return this.seccionServiceImpl.actualizarSeccion(codigoSeccion, seccion);
     }
+
 }
 

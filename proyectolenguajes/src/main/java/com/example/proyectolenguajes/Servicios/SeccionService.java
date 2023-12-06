@@ -15,5 +15,6 @@ public interface SeccionService {
     String actualizarSeccion(int codigoSeccion, Seccion seccion);
 
     public Seccion obtenerPorId(int codigoSeccion);
+
 }
 
