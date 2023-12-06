@@ -35,8 +35,8 @@ public class SeccionController {
         return this.seccionServiceImpl.eliminarSeccion(codigoSeccion);
     }
 
-    @PutMapping("/actualizar")
-    public String actualizarSeccion(@RequestParam(name = "codigoSeccion") int codigoSeccion, @RequestBody Seccion seccion) {
+    @PutMapping("/actualizar/{codigoSeccion}")
+    public String actualizarSeccion(@PathVariable(name = "codigoSeccion") int codigoSeccion, @RequestBody Seccion seccion) {
         return this.seccionServiceImpl.actualizarSeccion(codigoSeccion, seccion);
     }
 

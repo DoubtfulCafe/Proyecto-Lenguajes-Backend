@@ -7,12 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.proyectolenguajes.Modelos.Alumno;
-import com.example.proyectolenguajes.Modelos.Asignatura;
 import com.example.proyectolenguajes.Repositorios.AlumnoRepository;
-import com.example.proyectolenguajes.Repositorios.AsignaturaRepository;
+//import com.example.proyectolenguajes.Repositorios.AsignaturaRepository;
 import com.example.proyectolenguajes.Servicios.AlumnoService;
-
-import jakarta.transaction.Transactional;
 
 @Service
 public class AlumnoServiceImpl implements AlumnoService{
@@ -22,8 +19,8 @@ public class AlumnoServiceImpl implements AlumnoService{
     @Autowired
     private AlumnoRepository alumnoRepository;
 
-    @Autowired
-    private AsignaturaRepository asignaturaRepository;
+    /*@Autowired
+    private AsignaturaRepository asignaturaRepository;*/
 
     @Override
     public Alumno guardarAlumno(Alumno alumno) {

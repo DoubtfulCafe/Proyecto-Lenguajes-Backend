@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.proyectolenguajes.Modelos.Edificio;
-import com.example.proyectolenguajes.Servicios.EdificioService;
-import com.example.proyectolenguajes.Servicios.Impl.AlumnoServiceImpl;
 import com.example.proyectolenguajes.Servicios.Impl.EdificioServiceImpl;
 
 import java.util.List;
@@ -23,8 +21,8 @@ public class EdificioController {
         return edificioServiceImpl.guardarEdificio(edificio);
     }
 
-    @PutMapping("/actualizar")
-    public String actualizarEdificio(@RequestParam(name = "codigoEdificio") int codigoEdificio, @RequestBody Edificio edificio) {
+    @PutMapping("/actualizar/{codigoEdificio}")
+    public String actualizarEdificio(@PathVariable(name = "codigoEdificio") int codigoEdificio, @RequestBody Edificio edificio) {
         return this.edificioServiceImpl.actualizarEdificio(codigoEdificio, edificio);
     }
 

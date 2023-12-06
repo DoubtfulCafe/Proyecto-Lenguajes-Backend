@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.example.proyectolenguajes.Modelos.Alumno;
 
-import com.example.proyectolenguajes.Modelos.Asignatura;
-
 public interface AlumnoService {
     
     public Alumno guardarAlumno(Alumno alumno);

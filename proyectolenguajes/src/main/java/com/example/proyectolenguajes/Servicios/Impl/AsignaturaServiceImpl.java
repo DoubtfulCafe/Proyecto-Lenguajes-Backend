@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.proyectolenguajes.Modelos.Alumno;
 import com.example.proyectolenguajes.Modelos.Asignatura;
 import com.example.proyectolenguajes.Repositorios.AsignaturaRepository;
 import com.example.proyectolenguajes.Servicios.AsignaturaService;

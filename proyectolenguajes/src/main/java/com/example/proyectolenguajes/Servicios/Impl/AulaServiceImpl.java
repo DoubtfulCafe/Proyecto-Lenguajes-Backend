@@ -5,20 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.proyectolenguajes.Modelos.Aula;
-import com.example.proyectolenguajes.Modelos.Aula;
 import com.example.proyectolenguajes.Repositorios.AulaRepository;
 import com.example.proyectolenguajes.Servicios.AulaService;
 
 
-import java.util.List;
-
-import com.example.proyectolenguajes.Modelos.Edificio;
-import com.example.proyectolenguajes.Repositorios.EdificioRepository;
-import com.example.proyectolenguajes.Servicios.EdificioService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AulaServiceImpl implements AulaService {

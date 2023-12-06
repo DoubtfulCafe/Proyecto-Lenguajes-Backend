@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.proyectolenguajes.Modelos.Alumno;
 import com.example.proyectolenguajes.Modelos.Asignatura;
 import com.example.proyectolenguajes.Servicios.Impl.AsignaturaServiceImpl;
 
@@ -36,8 +35,8 @@ public class AsignaturaController {
         return this.asignaturaServiceImpl.eliminarAsignatura(codigoAsignatura);
     }
 
-    @PutMapping("/actualizar")
-    public String actualizarAsignatura(@RequestParam(name = "codigoAsignatura") int codigoAsignatura, @RequestBody Asignatura asignatura) {
+    @PutMapping("/actualizar/{codigoAsignatura}")
+    public String actualizarAsignatura(@PathVariable(name = "codigoAsignatura") int codigoAsignatura, @RequestBody Asignatura asignatura) {
         return this.asignaturaServiceImpl.actualizarAsignatura(codigoAsignatura, asignatura);
     }
 

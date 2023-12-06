@@ -35,8 +35,8 @@ public class TipoAulaController {
         return this.tipoAulaServiceImpl.eliminarTipoAula(idTipoAula);
     }
 
-    @PutMapping("/actualizar")
-    public String actualizarTipoAula(@RequestParam(name = "idTipoAula") int idTipoAula, @RequestBody TipoAula tipoAula) {
+    @PutMapping("/actualizar/idTipoAula")
+    public String actualizarTipoAula(@PathVariable(name = "idTipoAula") int idTipoAula, @RequestBody TipoAula tipoAula) {
         return this.tipoAulaServiceImpl.actualizarTipoAula(idTipoAula, tipoAula);
     }
 }

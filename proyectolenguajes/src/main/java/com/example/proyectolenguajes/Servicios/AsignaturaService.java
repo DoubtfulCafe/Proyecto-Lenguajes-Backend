@@ -2,7 +2,6 @@ package com.example.proyectolenguajes.Servicios;
 
 import java.util.List;
 
-import com.example.proyectolenguajes.Modelos.Alumno;
 import com.example.proyectolenguajes.Modelos.Asignatura;
 
 public interface AsignaturaService {
